@@ -1,0 +1,62 @@
+
+        <!DOCTYPE html>
+        <html lang="hi">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Monster Revenue Bot - Global Business</title>
+            <style>
+                :root { --main: #00ff88; --bg: #0d1117; --card: #161b22; }
+                body { background: var(--bg); color: white; font-family: 'Segoe UI', sans-serif; margin: 0; text-align: center; }
+                .login-screen { height: 100vh; display: flex; align-items: center; justify-content: center; }
+                .card { background: var(--card); border: 1px solid #30363d; padding: 30px; border-radius: 15px; max-width: 400px; box-shadow: 0 0 20px rgba(0,255,136,0.2); }
+                .btn { background: var(--main); color: black; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-size: 16px; margin-top: 15px; }
+                input { width: 90%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; color: white; border-radius: 5px; }
+                .ad-slot { background: #222; color: #666; padding: 10px; font-size: 10px; margin: 15px 0; border: 1px dashed #444; }
+                #appContent { display: none; padding: 20px; }
+            </style>
+        </head>
+        <body>
+            <div id="loginScreen" class="login-screen">
+                <div class="card">
+                    <h2 style="color:var(--main);">MONSTER AI LOGIN</h2>
+                    <p>Login with Gmail to access Monster Revenue Bot</p>
+                    <input type="email" id="email" placeholder="aapka-naam@gmail.com">
+                    <button class="btn" onclick="login()">ENTER SYSTEM</button>
+                </div>
+            </div>
+
+            <div id="appContent">
+                <div class="card" style="margin: 20px auto;">
+                    <h1>Monster Revenue Bot PRO</h1>
+                    <div class="ad-slot">GOOGLE ADSENSE BANNER READY</div>
+                    
+                    <p>Enter any problem for AI Neural Solution:</p>
+                    <input type="text" id="problem" placeholder="Yahan apni problem likhein...">
+                    <button class="btn" onclick="process()">START ANALYSIS</button>
+
+                    <div id="payGate" style="display:none; margin-top:20px; border-top:1px solid #333; padding-top:20px;">
+                        <h3 style="color: gold;">🔒 PREMIUM SOLUTION READY</h3>
+                        <p>Aapki problem ka solution nikal gaya hai. Isse dekhne ke liye ₹10 pay karein.</p>
+                        <button class="btn" style="background:gold;" onclick="alert('Redirecting to Payment Gateway...')">PAY & UNLOCK</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function login() {
+                    let mail = document.getElementById('email').value;
+                    if(mail.includes('@gmail.com')) {
+                        document.getElementById('loginScreen').style.display = 'none';
+                        document.getElementById('appContent').style.display = 'block';
+                    } else { alert("Bhai, sahi Gmail daalo!"); }
+                }
+                function process() {
+                    if(!document.getElementById('problem').value) { alert("Pehle kuch likho toh!"); return; }
+                    alert("AI is thinking...");
+                    setTimeout(() => { document.getElementById('payGate').style.display = 'block'; }, 1500);
+                }
+            </script>
+        </body>
+        </html>
+        
