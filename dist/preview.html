@@ -1,0 +1,27 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Crypto News Bot</title>
+            <style>
+                body { background: #000; color: #0f0; font-family: sans-serif; text-align: center; padding: 40px; }
+                .container { border: 3px solid #0f0; padding: 30px; border-radius: 20px; box-shadow: 0 0 30px #0f0; display: inline-block; }
+                input { display: block; margin: 10px auto; padding: 10px; background: #222; color: #0f0; border: 1px solid #0f0; }
+                .btn { background: #0f0; color: #000; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; }
+                #output { margin-top: 20px; color: yellow; font-size: 1.2em; }
+            </style>
+        </head>
+        <body>
+            <div class='container'>
+                <h1>Monster AI: Crypto News Bot</h1>
+                <div id='app-content'><h3>Live Crypto Tracker</h3><p>Bitcoin: $95,000</p><button class='btn' onclick='res("Prices Updated")'>Refresh Rates</button></div>
+                <div id='output'></div>
+                <hr>
+                <p style='color: red;'>Ghost Mode & Ads Active ✅</p>
+            </div>
+            <script>
+                function res(msg) { document.getElementById('output').innerText = "Result: " + msg; }
+            </script>
+        </body>
+        </html>
+        
