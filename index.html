@@ -4,57 +4,37 @@
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Super AI Monster - Pro Monster AI</title>
+            <title>Super AI Monster</title>
             <style>
-                :root { --neon: #00ff88; --dark: #05070a; --glass: rgba(255,255,255,0.05); }
-                body { background: var(--dark); color: #e0e0e0; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 0; display: flex; align-items: center; justify-content: center; min-height: 100vh; overflow: hidden; }
-                .app-box { background: var(--glass); border: 1px solid #30363d; border-radius: 30px; padding: 40px; width: 90%; max-width: 450px; backdrop-filter: blur(20px); box-shadow: 0 25px 50px rgba(0,0,0,0.5); text-align: center; }
-                .status-bar { display: flex; justify-content: space-between; font-size: 10px; color: var(--neon); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; }
-                h1 { font-size: 28px; margin: 10px 0; color: #fff; }
-                .input-area { margin: 30px 0; }
-                input { width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid #333; border-radius: 12px; color: #fff; margin-bottom: 15px; box-sizing: border-box; transition: 0.3s; }
-                input:focus { border-color: var(--neon); outline: none; box-shadow: 0 0 15px rgba(0,255,136,0.2); }
-                .btn { background: var(--neon); color: #000; padding: 18px; border: none; border-radius: 12px; font-weight: bold; width: 100%; cursor: pointer; font-size: 16px; transition: 0.3s; }
-                .btn:hover { transform: scale(1.03); box-shadow: 0 0 30px var(--neon); }
-                .revenue-tag { margin-top: 25px; padding: 15px; background: rgba(255,215,0,0.1); border-radius: 12px; border: 1px solid gold; color: gold; font-weight: bold; }
-                #ghost-screen { display: block; }
-                #main-app { display: none; }
+                :root { --neon: #00ff88; --bg: #05070a; }
+                body { background: var(--bg); color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
+                .app-card { background: #0d1117; border: 1px solid #30363d; border-radius: 25px; padding: 30px; max-width: 400px; margin: auto; box-shadow: 0 0 40px rgba(0,255,136,0.15); }
+                .btn { background: var(--neon); color: black; padding: 18px; border: none; border-radius: 12px; font-weight: bold; width: 100%; cursor: pointer; font-size: 16px; margin-top: 15px; }
+                input { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: white; border-radius: 10px; margin-bottom: 15px; box-sizing: border-box; }
+                .qr-box { display: none; background: white; padding: 15px; border-radius: 15px; margin-top: 20px; color: black; }
             </style>
         </head>
         <body>
-            <div class="app-box" id="ghost-screen">
-                <div class="status-bar"><span>Ghost Mode</span><span>Encrypted</span></div>
-                <h1>MONSTER LOGIN</h1>
-                <p style="color: #8b949e;">Neural-Link activation ke liye Gmail daalein.</p>
-                <input type="email" id="email" placeholder="example@gmail.com">
-                <button class="btn" onclick="unlock()">SECURE ACCESS</button>
-            </div>
+            <div class="app-card">
+                <div style="font-size: 10px; color: var(--neon); letter-spacing: 2px;">● SYSTEM LIVE v8.0.0-GOLD</div>
+                <h1 style="margin: 15px 0;">Super AI Monster</h1>
+                <p style="color: #8b949e;">Neural AI se har sawal ka solution paayein.</p>
+                
+                <input type="text" id="query" placeholder="Apna sawal yahan likhein...">
+                <button class="btn" onclick="startPay()">GET SOLUTION (₹10)</button>
 
-            <div class="app-box" id="main-app">
-                <div class="status-bar"><span>System: Stable</span><span>v7.0.0-ULTRA</span></div>
-                <h1 style="color: var(--neon);">Super AI Monster</h1>
-                <div class="revenue-tag">Estimated Earnings: $540.20</div>
-                <div class="input-area">
-                    <input type="text" id="query" placeholder="Ask World Knowledge Engine...">
-                    <button class="btn" onclick="process()">ANALYZE NEURAL PATTERNS</button>
-                </div>
-                <div id="pay-gate" style="display:none; color: gold; border-top: 1px solid #333; padding-top: 20px;">
-                    <p>🔒 Premium Answer Ready!</p>
-                    <button class="btn" style="background:gold;" onclick="alert('UPI Link generating...')">PAY ₹10 TO SEE ANSWER</button>
+                <div id="payment" class="qr-box">
+                    <p><b>Scan & Pay ₹10</b></p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=YOUR_UPI@upi&pn=Abhinav&am=10" alt="QR">
+                    <p style="font-size: 12px; margin-top:10px;">Payment ke baad answer unlock hoga.</p>
                 </div>
             </div>
 
             <script>
-                function unlock() {
-                    if(document.getElementById('email').value.includes('@')) {
-                        document.getElementById('ghost-screen').style.display = 'none';
-                        document.getElementById('main-app').style.display = 'block';
-                    } else { alert("Bhai, sahi email toh daalo!"); }
-                }
-                function process() {
+                function startPay() {
                     if(!document.getElementById('query').value) return;
-                    alert("AI Thinking...");
-                    setTimeout(() => { document.getElementById('pay-gate').style.display = 'block'; }, 1500);
+                    alert("AI Thinking... Neural Link established.");
+                    document.getElementById('payment').style.display = 'block';
                 }
             </script>
         </body>
