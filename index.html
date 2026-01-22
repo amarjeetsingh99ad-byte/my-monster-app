@@ -1,42 +1,96 @@
 
         <!DOCTYPE html>
-        <html lang="hi">
+        <html>
         <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Monster AI Profit</title>
+            <title>google map Master Edition</title>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
             <style>
-                :root { --neon: #00ff88; --bg: #05070a; }
-                body { background: var(--bg); color: white; font-family: sans-serif; text-align: center; margin: 0; padding: 20px; }
-                .app-card { background: #0d1117; border: 1px solid #30363d; border-radius: 25px; padding: 30px; max-width: 400px; margin: auto; box-shadow: 0 0 40px rgba(0,255,136,0.1); }
-                .btn { background: var(--neon); color: black; padding: 18px; border: none; border-radius: 12px; font-weight: bold; width: 100%; cursor: pointer; font-size: 16px; margin-top: 15px; }
-                input { width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: white; border-radius: 10px; margin-bottom: 15px; box-sizing: border-box; }
-                .qr-box { display: none; background: white; padding: 20px; border-radius: 20px; margin-top: 20px; color: black; }
-                .qr-box img { width: 220px; height: 220px; border: 5px solid #fff; }
-                .user-name { color: #1c73e8; font-weight: bold; margin-top: 10px; }
-            </style>
+        body { margin:0; font-family:sans-serif; background:#fff; color:#000; }
+        #login-screen { height:100vh; display:flex; align-items:center; justify-content:center; background:linear-gradient(45deg, #111, #333); }
+        .glass-card { background:rgba(255,255,255,0.1); padding:40px; border-radius:20px; text-align:center; backdrop-filter:blur(10px); color:white; }
+        input { padding:12px; margin:10px; width:250px; border-radius:10px; border:none; }
+        button { padding:12px 30px; background:red; color:white; border:none; border-radius:10px; cursor:pointer; font-weight:bold; }
+        
+        .nav-bar { display:flex; justify-content:space-between; align-items:center; padding:15px; border-bottom:1px solid #333; position:sticky; top:0; background:#fff; }
+        .logo { font-size:24px; font-weight:bold; color:red; }
+        .search-box input { width:150px; background:#222; color:white; padding:8px; }
+
+        .stories { display:flex; gap:15px; padding:15px; overflow-x:auto; border-bottom:1px solid #333; }
+        .s-circle { min-width:65px; height:65px; border-radius:50%; background:#444; border:2px solid red; background-size:cover; }
+
+        .post-card { max-width:500px; margin:20px auto; border:1px solid #333; border-radius:10px; overflow:hidden; }
+        .user-info { padding:10px; display:flex; align-items:center; gap:10px; }
+        .avatar { width:35px; height:35px; border-radius:50%; }
+        .main-img { width:100%; height:auto; }
+        .actions { padding:15px; font-size:18px; }
+
+        .profile-tab { text-align:center; padding:50px; }
+        .big-avatar { width:120px; height:120px; border-radius:50%; border:4px solid red; }
+
+        .bottom-nav { position:fixed; bottom:0; width:100%; display:flex; justify-content:space-around; padding:15px; background:#fff; border-top:1px solid #333; font-size:25px; }
+        </style>
         </head>
         <body>
-            <div class="app-card">
-                <div style="font-size: 10px; color: var(--neon); letter-spacing: 2px;">● PAYMENTS SECURED BY UPI</div>
-                <h1 style="margin: 15px 0;">Monster AI Profit</h1>
-                <p style="color: #8b949e;">Neural AI Solution Fee: ₹10</p>
-                
-                <input type="text" id="p" placeholder="Apna sawal likhein...">
-                <button class="btn" onclick="generateQR()">GET SOLUTION (₹10)</button>
+            
+        <div id='login-screen'>
+            <div class='glass-card'>
+                <h1>Monster AI</h1>
+                <p>Welcome to Google map</p>
+                <input type='text' placeholder='Gmail / Username'>
+                <input type='password' placeholder='Password'>
+                <button onclick='enterApp()'>Secure Login</button>
+            </div>
+        </div>
 
-                <div id="payment" class="qr-box">
-                    <p style="margin-top:0;"><b>Scanner for AMARJEET KUMAR</b></p>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=upi://pay?pa=8809176315@ybl&pn=AMARJEET%20KUMAR&cu=INR" alt="UPI QR">
-                    <div class="user-name">Amarjeet Kumar</div>
-                    <p style="font-size:12px;">Google Pay, PhonePe ya Paytm se scan karein.</p>
+        <div id='main-app' style='display:none;'>
+            <div class='nav-bar'>
+                <div class='logo'>Google map</div>
+                <div class='search-box'><input type='text' placeholder='Search world knowledge...'></div>
+            </div>
+
+            <div class='stories'>
+                <div class='s-circle' style='background-image:url("https://i.pravatar.cc/150?u=Abhinav")'></div>
+                <div class='s-circle'></div><div class='s-circle'></div><div class='s-circle'></div>
+            </div>
+
+            <div class='content-feed'>
+                <div class='post-card'>
+                    <div class='user-info'>
+                        <img src='https://i.pravatar.cc/150?u=Abhinav' class='avatar'>
+                        <span><b>Abhinav_Monster_Pro</b></span>
+                    </div>
+                    <img src='https://picsum.photos/600/400?random=1768096641.5139427' class='main-img'>
+                    <div class='actions'>❤️ Like &nbsp; 💬 Comment &nbsp; ✈️ Share</div>
                 </div>
             </div>
 
+            <div class='profile-tab' id='p-tab' style='display:none;'>
+                <img src='https://i.pravatar.cc/150?u=Abhinav' class='big-avatar'>
+                <h2>Abhinav Pro</h2>
+                <p>Monster AI Developer | World Knowledge Engine</p>
+                <div class='stats'><b>1.2M</b> Followers &nbsp; <b>95+</b> Score</div>
+            </div>
+
+            <div class='bottom-nav'>
+                <span onclick='showHome()'>🏠</span>
+                <span>🔍</span>
+                <span>➕</span>
+                <span onclick='showProfile()'>👤</span>
+            </div>
+        </div>
+        
             <script>
-                function generateQR() {
-                    if(!document.getElementById('p').value) { alert("Pehle sawal likhein!"); return; }
-                    document.getElementById('payment').style.display = 'block';
+                function enterApp() {
+                    document.getElementById('login-screen').style.display = 'none';
+                    document.getElementById('main-app').style.display = 'block';
+                }
+                function showProfile() {
+                    document.getElementById('content-feed').style.display = 'none';
+                    document.getElementById('p-tab').style.display = 'block';
+                }
+                function showHome() {
+                    document.getElementById('p-tab').style.display = 'none';
+                    document.getElementById('content-feed').style.display = 'block';
                 }
             </script>
         </body>
